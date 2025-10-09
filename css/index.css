@@ -154,6 +154,7 @@ label:hover {
   gap: 10px;
   color: white;
   border-radius: 10px;
+  border: 1px solid var(--backgraundblur);
   background-color: var(--backgraundblur);
   backdrop-filter: blur(10px);
   cursor: pointer;
