@@ -622,7 +622,6 @@ footer p {
   .contac-card {
     display: flex;
     flex-direction: row;
-    background-color: rgb(87, 38, 67);
     padding: 20px;
     border-radius: 10px;
     gap: 10px;
