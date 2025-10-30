@@ -1,178 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- tailwindcss -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- flowbite -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
       rel="stylesheet"
     />
-    <link rel="icon" href="asset/svg/portafolio.svg" />
+    <!-- animationcss -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/a74559d35e.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Portafolio</title>
   </head>
-  <body>
-    <header>
-      <div class="logo">
-        <div class="txt-logo">
-          <h1>Bryant Facenda<span class="extencion">.dev</span></h1>
+  <body class="min-h-screen dark:bg-gray-50">
+    <div id="wrapper">
+      <header
+        class="flex justify-between items-center p-4 rounded-2xl m-2 sticky top-0 bg-white z-10 dark:bg-gray-900 dark:text-white"
+      >
+        <!-- name -->
+        <div
+          class="text-2xl font-bold bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+        >
+          <h1 class="">Bryant</h1>
         </div>
-      </div>
-      <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Más sobre mí</a>
-        <a href="#">Contacto</a>
-      </nav>
-      <label>
-        <a href="contenido/curiculum.html" target="_blank">Ver mi resumen CV</a>
-      </label>
-    </header>
-    <main>
-      <section class="wrapper-hero">
-        <div class="hero">
-          <div class="dialogo">
-            <h1>Developer</h1>
-            <p>Desarrollador Full Stard | 2 años de experiencia</p>
-          </div>
-          <div class="content-languages">
-            <div class="titel-hero">Lenguajes que domino</div>
-            <div class="card JS">
-              <div class="l-logo">
-                <img src="asset/svg/js.svg" alt="" />
-              </div>
-              <div class="content-card">
-                <h3>JavaScript (JS)</h3>
-                <span>8%</span>
-              </div>
-            </div>
-
-            <div class="card JSX">
-              <div class="l-logo">
-                <img src="asset/svg/react.svg" alt="" />
-              </div>
-              <div class="content-card">
-                <h3>React (JSX)</h3>
-                <span>0%</span>
-              </div>
-            </div>
-
-            <div class="card TypeS">
-              <div class="l-logo">
-                <img src="asset/svg/TypeS.svg" alt="" />
-              </div>
-              <div class="content-card">
-                <h3>TypeScript (TS)</h3>
-                <span>0%</span>
-              </div>
-            </div>
-
-            <div class="card python">
-              <div class="l-logo">
-                <img src="asset/svg/python.svg" alt="" />
-              </div>
-              <div class="content-card">
-                <h3>Python (PY)</h3>
-                <span>0%</span>
-              </div>
-            </div>
-
-            <div class="card php">
-              <div class="l-logo">
-                <img src="asset/svg/php.svg" alt="" />
-              </div>
-              <div class="content-card">
-                <h3>PHP (PHP)</h3>
-                <span>0%</span>
-              </div>
-            </div>
+        <div class="flex items-center gap-5">
+          <button>
+            <i class="fa-solid fa-sun"></i>
+            <span class="sr-only">Toggle dark mode</span>
+          </button>
+          <!-- buttom sm -->
+          <button class="md:hidden">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-6 h-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
+              />
+            </svg>
+          </button>
+          <!-- nav md -->
+          <nav class="hidden md:block">
+            <ul class="flex gap-2">
+              <li class="text-blue-600 p-1 rounded-md hover:bg-gray-100">
+                <a href="#about">About</a>
+              </li>
+              <li class="text-blue-600 p-1 rounded-md hover:bg-gray-100">
+                <a href="#projects">Projects</a>
+              </li>
+              <li class="text-blue-600 p-1 rounded-md hover:bg-gray-100">
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <!-- buttom resume -->
+          <div>
+            <a href="">
+              <button
+                class="border p-1 border-gray-200 text-gray-600 rounded-md hover:bg-gray-100"
+              >
+                Resume
+              </button>
+            </a>
           </div>
         </div>
-      </section>
-      <section class="wrapper-iam">
-        <div class="content-sobremi">
-          <div class="img-s">
-            <img src="asset/img/IMG-20241202-WA0141.jpg" alt="Bryant Facenda" />
-          </div>
-          <div class="content-txt-sobremi">
-            <h2>Bryant Facenda</h2>
-            <div class="p">
+      </header>
+      <main class="ml-2 mr-2">
+        <!-- hero -->
+        <section
+          id="#about"
+          class="bg-white p-3 flex flex-col items-center justify-center gap-10 rounded-2xl"
+        >
+          <img
+            class="w-60 h-60 object-cover"
+            src="asset/img/imagne-sin-fondo.png"
+            alt="Bryant Facenda"
+          />
+          <div class="bg-gray-100 w-full rounded-md p-2">
+            <div
+              class="text-2xl font-bold bg-linear-to-l from-cyan-500 via-blue-500 to-pink-500 bg-clip-text text-transparent"
+            >
+              <h1>Full Stack Developer</h1>
+            </div>
+            <div>
               <p>
-                Soy un <span>Joven</span> de 22 años, que le gusta la
-                programación enfocada en la web.
-                <span>Y la misma es el futuro...</span>
-              </p>
-              <p>
-                Mi primer contacto con la programación fue en
-                <span>2017</span>, donde un niño de <span>13 año</span> se
-                preguntó <span>¿cómo se hace una página web?</span>
-              </p>
-              <p>
-                Desde entonces ha sido <span>8 años</span> de camino académico
-                para aprender y dominar, de la mano de <span>LEXPIN</span>, los
-                distintos lenguajes de <span>programación </span> que conozco.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
+                totam voluptas delectus hic nisi dolores quaerat et vitae magnam
+                repellat, ipsa perspiciatis provident adipisci officia. Id ab
+                quos architecto iure!
               </p>
             </div>
-
-            <div class="content-icon">
-              <div class="icon-s">
-                <img src="asset/svg/html.svg" alt="html" />
-                <img src="asset/svg/css.svg" alt="css" />
-                <a href="https://lexpin.online/" target="_blank"
-                  ><img src="asset/svg/lexpin.svg" alt=""
-                /></a>
+          </div>
+        </section>
+        <!-- Projects -->
+        <section
+          id="#Projects"
+          class="animate__animated animate__fadeInUp p-3 flex flex-col items-center justify-center gap-10 mt-5"
+        >
+          <!-- title -->
+          <div
+            class="p-2 font-bold text-3xl bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+          >
+            <h2 class="">Projects</h2>
+          </div>
+          <!-- projet -->
+          <div id="projects-grid" class="grid gap-4">
+            <div
+              class="project-card bg-white p-3 rounded-2xl flex gap-2 cursor-pointer"
+            >
+              <img
+                src="asset/img/iPhone-13-PRO-127.0.0.1.png"
+                alt="Project 1"
+                class="project-image w-40 min-h-70 object-cover rounded-2xl"
+              />
+              <div class="project-details flex flex-col gap-7">
+                <div
+                  class="font-bold text-2xl bg-linear-to-l from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                >
+                  <h3>Cahsless</h3>
+                </div>
+                <div class="text-justify">
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </li>
+                    <br />
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex gap-1 items-center flex-wrap">
+                  <div class="bg-gray-100 p-2">TailwindCSS</div>
+                  <div class="bg-gray-100 p-2">HTML</div>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/BryantFacenda/Project-1"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="project-card bg-white p-3 rounded-2xl flex gap-2 cursor-pointer"
+            >
+              <img
+                src="asset/img/iPhone-13-PRO-127.0.0.1.png"
+                alt="Project 1"
+                class="project-image w-40 min-h-70 object-cover rounded-2xl"
+              />
+              <div class="project-details flex flex-col gap-7">
+                <div
+                  class="font-bold text-2xl bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                >
+                  <h3>Evalu</h3>
+                </div>
+                <div class="text-justify">
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </li>
+                    <br />
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex gap-1 items-center flex-wrap">
+                  <div class="bg-gray-100 p-2">TailwindCSS</div>
+                  <div class="bg-gray-100 p-2">HTML</div>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/BryantFacenda/Project-1"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >View Project</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="project-card bg-white p-3 rounded-2xl flex gap-2 cursor-pointer"
+            >
+              <img
+                src="asset/img/iPhone-13-PRO-127.0.0.1.png"
+                alt="Project 1"
+                class="project-image w-40 min-h-70 object-cover rounded-2xl"
+              />
+              <div class="project-details flex flex-col gap-7">
+                <div
+                  class="font-bold text-2xl bg-linear-to-l from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                >
+                  <h3>Cahsless</h3>
+                </div>
+                <div class="text-justify">
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </li>
+                    <br />
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex gap-1 items-center flex-wrap">
+                  <div class="bg-gray-100 p-2">TailwindCSS</div>
+                  <div class="bg-gray-100 p-2">HTML</div>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/BryantFacenda/Project-1"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >View Project</a
+                  >
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-      <section class="wrapper-contac">
-        <div class="content-contac">
-          <div class="content-c-titel">
-            <h2>Contactame</h2>
+        </section>
+        <!-- Contact -->
+        <section
+          id="#contact"
+          class="animate__animated animate__fadeInUp mt-3 p-3"
+        >
+          <div
+            class="text-3xl font-bold bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent flex flex-col justify-center items-center"
+          >
+            <h2>Contact</h2>
           </div>
-          <div class="contac-txt">
-            <div class="contac-titel">
-              <h2>Para saber más de mis proyectos e innovaciones</h2>
+          <div id="content-contact" class="flex flex-col gap-3">
+            <p>You can contact me through:</p>
+            <div id="Contact" class="bg-white p-3 rounded-2xl">
+              <div class="font-bold flex gap-2 items-center">
+                <div>
+                  <span class="text-2xl text-green-500">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </span>
+                </div>
+                <h2>
+                  Whatsapp:
+                  <a
+                    href="whatsapp://send?phone=+584241736193"
+                    class="text-green-600"
+                    >+58 4241736193</a
+                  >
+                </h2>
+              </div>
             </div>
-            <div class="contac-card">
-              <a href="https://wa.me/+584241736193" target="_blank">
-                <div class="card-contac">
-                  <div class="c-icon">
-                    <img src="asset/svg/whatsApp.svg" alt="" />
-                  </div>
-                  <div class="txt-card-c">WhatsApp</div>
+            <div id="Contact" class="bg-white p-3 rounded-2xl">
+              <div class="font-bold flex justify-end gap-2 items-center">
+                <div>
+                  <span class="text-2xl text-pink-500">
+                    <i class="fa-brands fa-instagram"></i>
+                  </span>
                 </div>
-              </a>
-
-              <a href="mialto:bryatffacen@gmail.com" target="_blank">
-                <div class="card-contac">
-                  <div class="c-icon">
-                    <img src="asset/svg/gmail.svg" alt="" />
-                  </div>
-                  <div class="txt-card-c">Correo Electronico</div>
-                </div>
-              </a>
-            </div>
-            <!-- section footer -->
-            <div class="wrapper-footer">
-              <footer>
-                <p>
-                  Desarrollado por Bryant Facenda todo los derechos reservados
-                </p>
-                <div class="links">
-                  <a href="">Instragram</a>
-                  <a href="">Facebook</a>
-                  <a href="">GitHub</a>
-                  <a href="">X</a>
-                  <a href="">Linkedin</a>
-                </div>
-              </footer>
+                <h2>
+                  instagram:
+                  <a
+                    href="https://www.instagram.com/bafaf03/"
+                    target="_blank"
+                    class="text-pink-600"
+                    >@bafaf03</a
+                  >
+                </h2>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
+    <!-- flowbite -->
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
   </body>
 </html>
