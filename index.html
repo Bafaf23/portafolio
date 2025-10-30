@@ -22,10 +22,10 @@
     ></script>
     <title>Portafolio</title>
   </head>
-  <body class="min-h-screen dark:bg-gray-50">
+  <body class="min-h-screen bg-gray-100 dark:bg-gray-500">
     <div id="wrapper">
       <header
-        class="flex justify-between items-center p-4 rounded-2xl m-2 sticky top-0 bg-white z-10 dark:bg-gray-900 dark:text-white"
+        class="flex justify-between items-center p-4 rounded-2xl m-2 sticky top-2 bg-white z-10 dark:bg-gray-900 dark:text-white"
       >
         <!-- name -->
         <div
@@ -34,12 +34,18 @@
           <h1 class="">Bryant</h1>
         </div>
         <div class="flex items-center gap-5">
-          <button>
-            <i class="fa-solid fa-sun"></i>
-            <span class="sr-only">Toggle dark mode</span>
-          </button>
+          <div>
+            <button class="cursor-pointer hidden dark:block">
+              <i class="fa-solid fa-sun"></i>
+              <span class="sr-only">Toggle dark mode</span>
+            </button>
+            <button class="cursor-pointer dark:hidden block">
+              <i class="fa-solid fa-moon"></i>
+            </button>
+          </div>
+
           <!-- buttom sm -->
-          <button class="md:hidden">
+          <button class="md:hidden cursor-pointer">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -73,7 +79,7 @@
           <div>
             <a href="">
               <button
-                class="border p-1 border-gray-200 text-gray-600 rounded-md hover:bg-gray-100"
+                class="border p-1 border-gray-200 text-gray-600 rounded-md hover:bg-gray-100 cursor-pointer"
               >
                 Resume
               </button>
@@ -85,14 +91,16 @@
         <!-- hero -->
         <section
           id="#about"
-          class="bg-white p-3 flex flex-col items-center justify-center gap-10 rounded-2xl"
+          class="bg-white dark:bg-gray-700 p-3 flex flex-col items-center justify-center gap-10 rounded-2xl"
         >
           <img
             class="w-60 h-60 object-cover"
             src="asset/img/imagne-sin-fondo.png"
             alt="Bryant Facenda"
           />
-          <div class="bg-gray-100 w-full rounded-md p-2">
+          <div
+            class="bg-gray-100 dark:bg-gray-800 dark:text-white w-full rounded-md p-2"
+          >
             <div
               class="text-2xl font-bold bg-linear-to-l from-cyan-500 via-blue-500 to-pink-500 bg-clip-text text-transparent"
             >
