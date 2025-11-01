@@ -22,91 +22,113 @@
     ></script>
     <title>Portafolio</title>
   </head>
-  <body class="min-h-screen bg-gray-100 dark:bg-gray-500">
+  <body class="min-h-screen bg-gray-100">
     <div id="wrapper">
-      <header
-        class="flex justify-between items-center p-4 rounded-2xl m-2 sticky top-2 bg-white z-10 dark:bg-gray-900 dark:text-white"
-      >
-        <!-- name -->
-        <div
-          class="text-2xl font-bold bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-        >
-          <h1 class="">Bryant</h1>
-        </div>
-        <div class="flex items-center gap-5">
-          <div>
-            <button class="cursor-pointer hidden dark:block">
-              <i class="fa-solid fa-sun"></i>
-              <span class="sr-only">Toggle dark mode</span>
-            </button>
-            <button class="cursor-pointer dark:hidden block">
-              <i class="fa-solid fa-moon"></i>
-            </button>
-          </div>
-
-          <!-- buttom sm -->
-          <button class="md:hidden cursor-pointer">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1.5"
-              stroke="currentColor"
-              class="w-6 h-6"
+      <header class="mt-2 mb-2 ml-2 mr-2 sticky top-2 z-10">
+        <nav class="border-gray-100 border bg-white rounded-2xl">
+          <div
+            class="max-w-screen-7xl flex flex-wrap items-center justify-between mx-auto p-4"
+          >
+            <a
+              href="#about"
+              class="flex items-center bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text text-transparent font-bold text-3xl"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"
-              />
-            </svg>
-          </button>
-          <!-- nav md -->
-          <nav class="hidden md:block">
-            <ul class="flex gap-2">
-              <li class="text-blue-600 p-1 rounded-md hover:bg-gray-100">
-                <a href="#about">About</a>
-              </li>
-              <li class="text-blue-600 p-1 rounded-md hover:bg-gray-100">
-                <a href="#projects">Projects</a>
-              </li>
-              <li class="text-blue-600 p-1 rounded-md hover:bg-gray-100">
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
-          </nav>
-          <!-- buttom resume -->
-          <div>
-            <a href="">
-              <button
-                class="border p-1 border-gray-200 text-gray-600 rounded-md hover:bg-gray-100 cursor-pointer"
-              >
-                Resume
-              </button>
+              Bryant
             </a>
+            <!-- grup-nav -->
+            <div class="flex items-center">
+              <button
+                data-collapse-toggle="navbar-solid-bg"
+                type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                aria-controls="navbar-solid-bg"
+                aria-expanded="false"
+              >
+                <span class="sr-only">Open main menu</span>
+                <span class="text-2xl">
+                  <i class="fa-solid fa-bars"></i>
+                </span>
+              </button>
+
+              <a
+                href="https://drive.google.com/file/d/1_1WE0zxoWjp8QZnRlih0xBFvP45ZjlU8/view?usp=sharing"
+                target="_blank"
+                class="md:hidden"
+              >
+                <button
+                  class="border border-gray-200 ml-2 p-1.5 rounded-lg hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent cursor-pointer text-black"
+                >
+                  Resume
+                </button>
+              </a>
+            </div>
+            <!-- option-menu -->
+            <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+              <ul
+                class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
+              >
+                <li>
+                  <a
+                    href="#"
+                    class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                    >Length</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                    >Project</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                    >Contact</a
+                  >
+                </li>
+                <a
+                  href="https://drive.google.com/file/d/1_1WE0zxoWjp8QZnRlih0xBFvP45ZjlU8/view?usp=sharing"
+                  target="_blank"
+                  class="hidden md:block"
+                >
+                  <button
+                    class="border border-gray-200 ml-2 p-1.5 rounded-lg hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent cursor-pointer"
+                  >
+                    Resume
+                  </button>
+                </a>
+              </ul>
+            </div>
           </div>
-        </div>
+        </nav>
       </header>
       <main class="ml-2 mr-2">
         <!-- hero -->
         <section
           id="#about"
-          class="bg-white dark:bg-gray-700 p-3 flex flex-col items-center justify-center gap-10 rounded-2xl"
+          class="bg-white p-3 flex flex-col items-center justify-center gap-10 rounded-2xl h-165 md:flex-row"
         >
           <img
-            class="w-60 h-60 object-cover"
+            class="w-60 h-60 object-cover md:w-100 md:h-100"
             src="asset/img/imagne-sin-fondo.png"
             alt="Bryant Facenda"
           />
-          <div
-            class="bg-gray-100 dark:bg-gray-800 dark:text-white w-full rounded-md p-2"
-          >
+          <div class="flex flex-col gap-3 md:w-1/2">
             <div
               class="text-2xl font-bold bg-linear-to-l from-cyan-500 via-blue-500 to-pink-500 bg-clip-text text-transparent"
             >
               <h1>Full Stack Developer</h1>
             </div>
-            <div>
+            <div class="bg-gray-100 w-full rounded-md p-2">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Id
                 totam voluptas delectus hic nisi dolores quaerat et vitae magnam
@@ -114,134 +136,212 @@
                 quos architecto iure!
               </p>
             </div>
+            <div class="flex justify-center gap-2">
+              <div class="p-2 bg-gray-100 rounded-md">
+                <a
+                  href="https://github.com/BryantFacenda"
+                  target="_blank"
+                  class="hover:translate-105 ease-in-out duration-300"
+                >
+                  <span
+                    class="text-3xl bg-linear-to-r from-purple-500 via-black to-pink-500 bg-clip-text text-transparent"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- length -->
+        <section id="#length" class="animate__animated animate__fadeInUp mt-10">
+          <div
+            class="p-2 font-bold text-3xl bg-linear-to-r from-yellow-500 via-yellow-500 to-orange-500 bg-clip-text text-transparent flex justify-center"
+          >
+            Length
+          </div>
+          <div
+            id="content-length"
+            class="bg-white rounded-2xl flex justify-center gap-3 p-3 mt-5 md:ml-15 md:mr-15"
+          >
+            <div
+              class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300"
+            >
+              <span class="text-5xl">
+                <i class="fa-brands fa-square-js"></i>
+              </span>
+              <h2>Javascript</h2>
+            </div>
+            <div
+              class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300"
+            >
+              <span class="text-5xl">
+                <i class="fa-brands fa-react"></i>
+              </span>
+              <h2>React JSX</h2>
+            </div>
+            <div
+              class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-yellow-500 via-yellow-500 to-blue-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300"
+            >
+              <span class="text-5xl">
+                <i class="fa-brands fa-python"></i>
+              </span>
+              <h2>Python py</h2>
+            </div>
+            <div
+              class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300"
+            >
+              <span class="text-5xl">
+                <i class="fa-brands fa-php"></i>
+              </span>
+              <h2>PhP php</h2>
+            </div>
           </div>
         </section>
         <!-- Projects -->
         <section
-          id="#Projects"
-          class="animate__animated animate__fadeInUp p-3 flex flex-col items-center justify-center gap-10 mt-5"
+          id="#projects"
+          class="animate__animated animate__fadeInUp p-3 mt-5"
         >
           <!-- title -->
           <div
-            class="p-2 font-bold text-3xl bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+            class="p-2 font-bold text-3xl bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent flex justify-center"
           >
             <h2 class="">Projects</h2>
           </div>
           <!-- projet -->
-          <div id="projects-grid" class="grid gap-4">
+          <div
+            id="projects-grid"
+            class="grid md:grid-cols-2 grid-cols-1 gap-2 md:ml-15 md:mr-15 mt-10"
+          >
             <div
-              class="project-card bg-white p-3 rounded-2xl flex gap-2 cursor-pointer"
+              class="project-card bg-white p-3 rounded-2xl flex flex-col justify-center md:flex-row gap-7 cursor-pointer md:col-start-1 md:col-end-4"
             >
               <img
                 src="asset/img/iPhone-13-PRO-127.0.0.1.png"
                 alt="Project 1"
-                class="project-image w-40 min-h-70 object-cover rounded-2xl"
+                class="project-image h-70 object-cover rounded-md md:w-100 md:h-100 hover:scale-102 ease-in-out duration-300"
               />
-              <div class="project-details flex flex-col gap-7">
+              <div class="project-details flex flex-col gap-5">
                 <div
                   class="font-bold text-2xl bg-linear-to-l from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
                 >
                   <h3>Cahsless</h3>
                 </div>
-                <div class="text-justify">
+                <div class="text-justify bg-gray-100 rounded-md p-2">
                   <ul>
                     <li>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </li>
-                    <br />
                     <li>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </li>
                   </ul>
                 </div>
-                <div class="flex gap-1 items-center flex-wrap">
-                  <div class="bg-gray-100 p-2">TailwindCSS</div>
-                  <div class="bg-gray-100 p-2">HTML</div>
+                <div class="flex gap-1 items-center justify-end flex-wrap">
+                  <div class="bg-gray-100 rounded-md p-2">TailwindCSS</div>
+                  <div class="bg-gray-100 rounded-md p-2">HTML</div>
                 </div>
-                <div>
+                <div class="flex justify-center gap-2">
                   <a
                     href="https://github.com/BryantFacenda/Project-1"
                     target="_blank"
                     class="text-blue-600 hover:underline"
-                    >View Project</a
+                    >View project</a
+                  >
+                  <a
+                    href="https://github.com/BryantFacenda/Project-1"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >View code</a
                   >
                 </div>
               </div>
             </div>
             <div
-              class="project-card bg-white p-3 rounded-2xl flex gap-2 cursor-pointer"
+              class="project-card bg-white p-3 rounded-2xl flex flex-col justify-center md:flex-row gap-3 cursor-pointer"
             >
               <img
                 src="asset/img/iPhone-13-PRO-127.0.0.1.png"
                 alt="Project 1"
-                class="project-image w-40 min-h-70 object-cover rounded-2xl"
+                class="project-image h-70 object-cover rounded-md md:w-100 md:h-100 hover:scale-102 ease-in-out duration-300"
               />
-              <div class="project-details flex flex-col gap-7">
-                <div
-                  class="font-bold text-2xl bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
-                >
-                  <h3>Evalu</h3>
-                </div>
-                <div class="text-justify">
-                  <ul>
-                    <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </li>
-                    <br />
-                    <li>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </li>
-                  </ul>
-                </div>
-                <div class="flex gap-1 items-center flex-wrap">
-                  <div class="bg-gray-100 p-2">TailwindCSS</div>
-                  <div class="bg-gray-100 p-2">HTML</div>
-                </div>
-                <div>
-                  <a
-                    href="https://github.com/BryantFacenda/Project-1"
-                    target="_blank"
-                    class="text-blue-600 hover:underline"
-                    >View Project</a
-                  >
-                </div>
-              </div>
-            </div>
-            <div
-              class="project-card bg-white p-3 rounded-2xl flex gap-2 cursor-pointer"
-            >
-              <img
-                src="asset/img/iPhone-13-PRO-127.0.0.1.png"
-                alt="Project 1"
-                class="project-image w-40 min-h-70 object-cover rounded-2xl"
-              />
-              <div class="project-details flex flex-col gap-7">
+              <div class="project-details flex flex-col gap-5">
                 <div
                   class="font-bold text-2xl bg-linear-to-l from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
                 >
                   <h3>Cahsless</h3>
                 </div>
-                <div class="text-justify">
+                <div class="text-justify bg-gray-100 rounded-md p-2">
                   <ul>
                     <li>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </li>
-                    <br />
                     <li>
                       Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     </li>
                   </ul>
                 </div>
-                <div class="flex gap-1 items-center flex-wrap">
-                  <div class="bg-gray-100 p-2">TailwindCSS</div>
-                  <div class="bg-gray-100 p-2">HTML</div>
+                <div class="flex gap-1 items-center justify-end flex-wrap">
+                  <div class="bg-gray-100 rounded-md p-2">TailwindCSS</div>
+                  <div class="bg-gray-100 rounded-md p-2">HTML</div>
                 </div>
-                <div>
+                <div class="flex justify-center gap-2">
                   <a
                     href="https://github.com/BryantFacenda/Project-1"
                     target="_blank"
                     class="text-blue-600 hover:underline"
-                    >View Project</a
+                    >View project</a
+                  >
+                  <a
+                    href="https://github.com/BryantFacenda/Project-1"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >View code</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="project-card bg-white p-3 rounded-2xl flex flex-col justify-center md:flex-row gap-3 cursor-pointer"
+            >
+              <img
+                src="asset/img/iPhone-13-PRO-127.0.0.1.png"
+                alt="Project 1"
+                class="project-image h-70 object-cover rounded-md md:w-100 md:h-100 hover:scale-102 ease-in-out duration-300"
+              />
+              <div class="project-details flex flex-col gap-5">
+                <div
+                  class="font-bold text-2xl bg-linear-to-l from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent"
+                >
+                  <h3>Cahsless</h3>
+                </div>
+                <div class="text-justify bg-gray-100 rounded-md p-2">
+                  <ul>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </li>
+                    <li>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    </li>
+                  </ul>
+                </div>
+                <div class="flex gap-1 items-center justify-end flex-wrap">
+                  <div class="bg-gray-100 rounded-md p-2">TailwindCSS</div>
+                  <div class="bg-gray-100 rounded-md p-2">HTMLd</div>
+                </div>
+                <div class="flex justify-center gap-2">
+                  <a
+                    href="https://github.com/BryantFacenda/Project-1"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >View project</a
+                  >
+                  <a
+                    href="https://github.com/BryantFacenda/Project-1"
+                    target="_blank"
+                    class="text-blue-600 hover:underline"
+                    >View code</a
                   >
                 </div>
               </div>
@@ -254,12 +354,16 @@
           class="animate__animated animate__fadeInUp mt-3 p-3"
         >
           <div
-            class="text-3xl font-bold bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text text-transparent flex flex-col justify-center items-center"
+            class="text-3xl font-bold bg-linear-to-r from-yellow-600 via-green-600 to-blue-600 bg-clip-text text-transparent flex flex-col justify-center items-center"
           >
             <h2>Contact</h2>
           </div>
-          <div id="content-contact" class="flex flex-col gap-3">
+          <div
+            id="content-contact"
+            class="flex flex-col gap-3 md:ml-10 md:mr-10"
+          >
             <p>You can contact me through:</p>
+
             <div id="Contact" class="bg-white p-3 rounded-2xl">
               <div class="font-bold flex gap-2 items-center">
                 <div>
@@ -277,6 +381,7 @@
                 </h2>
               </div>
             </div>
+
             <div id="Contact" class="bg-white p-3 rounded-2xl">
               <div class="font-bold flex justify-end gap-2 items-center">
                 <div>
@@ -291,6 +396,25 @@
                     target="_blank"
                     class="text-pink-600"
                     >@bafaf03</a
+                  >
+                </h2>
+              </div>
+            </div>
+
+            <div id="Contact" class="bg-white p-3 rounded-2xl">
+              <div class="font-bold flex gap-2 items-center">
+                <div>
+                  <span class="text-2xl text-red-500">
+                    <i class="fa-regular fa-envelope"></i>
+                  </span>
+                </div>
+                <h2>
+                  gmail:
+                  <a
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=bryantffacen%40gmail.com"
+                    target="_blank"
+                    class="text-red-500"
+                    >bryantffacen@gmail.com</a
                   >
                 </h2>
               </div>
