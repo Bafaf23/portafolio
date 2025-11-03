@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="dark scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -22,12 +22,27 @@
     ></script>
     <!-- animate-scroll -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <!-- dark mode -->
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
     <title>@bafaf23</title>
   </head>
-  <body class="min-h-screen bg-gray-100">
+  <body class="min-h-screen bg-gray-100 dark:bg-gray-700">
     <div id="wrapper">
       <header class="mt-2 mb-2 ml-2 mr-2 sticky top-2 z-10">
-        <nav class="border-gray-100 border bg-white rounded-2xl">
+        <nav
+          class="border-gray-100 border dark:border-gray-700 bg-white dark:bg-gray-800 rounded-2xl dark:text-white"
+        >
           <div
             class="max-w-screen-7xl flex flex-wrap items-center justify-between mx-auto p-4"
           >
@@ -37,12 +52,45 @@
             >
               Bryant
             </a>
+
             <!-- grup-nav -->
             <div class="flex items-center gap-2">
+              <!-- button-theme -->
+              <button
+                id="theme-toggle"
+                type="button"
+                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+              >
+                <svg
+                  id="theme-toggle-dark-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+                <svg
+                  id="theme-toggle-light-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+              <!-- button-option -->
               <button
                 data-collapse-toggle="navbar-solid-bg"
                 type="button"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 dark:hover:bg-gray-700 dark:focus:ring-gray-600 focus:outline-none focus:ring-2 focus:ring-gray-200"
                 aria-controls="navbar-solid-bg"
                 aria-expanded="false"
               >
@@ -51,23 +99,75 @@
                   <i class="fa-solid fa-bars"></i>
                 </span>
               </button>
-
+              <!-- option-menu -->
+              <div class="hidden w-full md:block md:w-auto">
+                <ul
+                  class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-700 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
+                >
+                  <li>
+                    <a
+                      href="#"
+                      class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#education"
+                      class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                      >Education</a
+                    >
+                  </li>
+                  <li class="md:hidden lg:block">
+                    <a
+                      href="#length"
+                      class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                      >Lenguaje, Framework & Tecnologies</a
+                    >
+                  </li>
+                  <li class="hidden md:block lg:hidden">
+                    <a
+                      href="#length"
+                      class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                      >Lenguaje and plus</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#projects"
+                      class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                      >Project</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#contact"
+                      class="block py-2 px-3 md:p-3 rounded-sm md:bg-transparent hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent"
+                      >Contact</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <!-- button-resume -->
               <a
                 href="https://drive.google.com/file/d/1_1WE0zxoWjp8QZnRlih0xBFvP45ZjlU8/view?usp=sharing"
                 target="_blank"
-                class="md:hidden"
+                class=""
               >
                 <button
-                  class="border border-gray-200 ml-2 p-1.5 rounded-lg hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent cursor-pointer text-black"
+                  class="border border-gray-200 dark:border-gray-600 dark:text-white ml-2 p-1.5 rounded-lg hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent cursor-pointer text-black"
                 >
                   Resume
                 </button>
               </a>
             </div>
             <!-- option-menu -->
-            <div class="hidden w-full md:block md:w-auto" id="navbar-solid-bg">
+            <div
+              class="hidden lg:hidden w-full md:block md:w-auto"
+              id="navbar-solid-bg"
+            >
               <ul
-                class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
+                class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-700 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent"
               >
                 <li>
                   <a
@@ -111,17 +211,6 @@
                     >Contact</a
                   >
                 </li>
-                <a
-                  href="https://drive.google.com/file/d/1_1WE0zxoWjp8QZnRlih0xBFvP45ZjlU8/view?usp=sharing"
-                  target="_blank"
-                  class="hidden md:block"
-                >
-                  <button
-                    class="border border-gray-200 ml-2 p-1.5 rounded-lg hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-blue-500 to-pink-500 bg-clip-text hover:text-transparent cursor-pointer"
-                  >
-                    Resume
-                  </button>
-                </a>
               </ul>
             </div>
           </div>
@@ -131,7 +220,7 @@
         <!-- hero -->
         <section
           id="about"
-          class="bg-white p-3 rounded-2xl h-1/2 md:h-165 relavite"
+          class="bg-white dark:bg-gray-800 p-3 rounded-2xl h-1/2 md:h-165"
         >
           <!-- body-hero -->
           <div
@@ -139,8 +228,8 @@
             data-aos="fade-up"
           >
             <img
-              class="w-60 h-60 object-cover md:w-100 md:h-100"
-              src="asset/img/imagne-sin-fondo.png"
+              class="w-150 h-70 object-cover rounded-md"
+              src="asset/img/Foto-primary.jpg"
               alt="Bryant Facenda"
             />
             <div class="flex flex-col gap-3 md:w-1/2">
@@ -149,7 +238,9 @@
               >
                 <h1 class="animate__fadeInLeft">Full Stack Developer</h1>
               </div>
-              <div class="bg-gray-100 w-full rounded-md p-2">
+              <div
+                class="bg-gray-100 dark:bg-gray-700 dark:text-white w-full rounded-md p-2"
+              >
                 <p>
                   I am a
                   <span class="text-cyan-500 font-bold"
@@ -178,7 +269,7 @@
                 </p>
               </div>
               <div class="flex justify-end gap-2 animate__fadeInRight">
-                <div class="p-2 bg-gray-100 rounded-md">
+                <div class="p-2 bg-gray-100 dark:bg-gray-600 rounded-md">
                   <a
                     href="https://github.com/Bafaf23"
                     target="_blank"
@@ -191,7 +282,7 @@
                     </span>
                   </a>
                 </div>
-                <div class="p-2 bg-gray-100 rounded-md">
+                <div class="p-2 bg-gray-100 dark:bg-gray-600 rounded-md">
                   <a
                     href="https://instagram.com/bafaf03"
                     target="_blank"
@@ -220,7 +311,7 @@
           <div class="mt-5 md:ml-15 md:mr-15 flex flex-col gap-2">
             <div
               data-aos="fade-right"
-              class="flex gap-3 bg-white p-2 rounded-2xl"
+              class="flex gap-3 bg-white dark:bg-gray-800 p-2 rounded-2xl"
             >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6uC63TKaBPPHmeai_z7Ln22h93HCQpef0jA&s"
@@ -233,7 +324,7 @@
                 >
                   Lexpin
                 </h2>
-                <div class="text-gray-600">
+                <div class="text-gray-600 dark:text-white">
                   <p>Full Stack Developer</p>
                   <p>September 2025 - March 2026</p>
                 </div>
@@ -241,7 +332,7 @@
             </div>
             <div
               data-aos="fade-down"
-              class="flex gap-3 md:justify-end bg-white p-2 rounded-2xl"
+              class="flex gap-3 md:justify-end bg-white dark:bg-gray-800 p-2 rounded-2xl"
             >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkqrSkLANps2BJc0f3ycYjYw6TvkzM1Bs87A&s"
@@ -254,7 +345,7 @@
                 >
                   U.E.N Juan de Escalona
                 </h2>
-                <div class="text-gray-600">
+                <div class="text-gray-600 dark:text-white">
                   <p>Bachelor</p>
                   <p>July 2021</p>
                 </div>
@@ -279,14 +370,14 @@
           <div
             data-aos="zoom-in"
             id="content-length"
-            class="rounded-2xl flex flex-wrap gap-5 mt-5 md:ml-15 md:mr-15 justify-center bg-gray-200 p-2"
+            class="rounded-2xl flex flex-wrap gap-5 mt-5 md:ml-15 md:mr-15 justify-center bg-gray-200 dark:bg-gray-500 p-2"
           >
             <!-- Languages -->
             <div
-              class="bg-white p-3 rounded-2xl grid grid-cols-2 grid-rows-2 gap-3"
+              class="bg-white dark:bg-gray-800 p-3 rounded-2xl grid grid-cols-2 grid-rows-2 gap-3"
             >
               <div
-                class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300"
+                class="flex flex-col items-center gap-1 p-2 dark:text-white dark:border-gray-600 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-yellow-500 via-orange-500 to-red-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300"
               >
                 <span class="text-5xl">
                   <i class="fa-brands fa-square-js"></i>
@@ -294,7 +385,7 @@
                 <h2>Javascript</h2>
               </div>
               <div
-                class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-yellow-500 via-yellow-500 to-blue-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300"
+                class="flex flex-col items-center gap-1 p-2 border dark:text-white dark:border-gray-600 border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-yellow-500 via-yellow-500 to-blue-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300"
               >
                 <span class="text-5xl">
                   <i class="fa-brands fa-python"></i>
@@ -302,7 +393,7 @@
                 <h2>Python py</h2>
               </div>
               <div
-                class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300 col-start-1 col-end-3 row-start-2 row-end-3"
+                class="flex flex-col items-center gap-1 p-2 border dark:text-white dark:border-gray-600 border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300 col-start-1 col-end-3 row-start-2 row-end-3"
               >
                 <span class="text-5xl">
                   <i class="fa-brands fa-php"></i>
@@ -313,10 +404,10 @@
             <!-- framework  -->
             <div
               id="content-length"
-              class="grid grid-cols-2 grid-rows-2 gap-3 bg-white rounded-2xl p-3"
+              class="grid grid-cols-2 grid-rows-2 gap-3 bg-white dark:bg-gray-800 rounded-2xl p-3"
             >
               <div
-                class="flex flex-col items-center gap-1 p-2 justify-center border border-gray-200 rounded-md cursor-pointer hover:-translate-y-2 ease-in-out duration-300 hover:bg-gray-300 hover:bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent row-start-1 row-end-3"
+                class="flex flex-col items-center gap-1 p-2 justify-center dark:text-white dark:border-gray-600 border border-gray-200 rounded-md cursor-pointer hover:-translate-y-2 ease-in-out duration-300 hover:bg-gray-300 hover:bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent row-start-1 row-end-3"
               >
                 <span class="text-5xl">
                   <i class="fa-brands fa-sass"></i>
@@ -324,7 +415,7 @@
                 <h2>SASS</h2>
               </div>
               <div
-                class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent hover:-translate-y-2 ease-in-out duration-300 col-start-2 col-end-2"
+                class="flex flex-col items-center gap-1 p-2 border dark:text-white dark:border-gray-600 border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent hover:-translate-y-2 ease-in-out duration-300 col-start-2 col-end-2"
               >
                 <span class="h-full">
                   <img
@@ -336,7 +427,7 @@
                 <h2>TailwindCSS</h2>
               </div>
               <div
-                class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300 col-start-2"
+                class="flex flex-col items-center gap-1 p-2 border dark:text-white dark:border-gray-600 border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent hover:scale-103 ease-in-out duration-300 col-start-2"
               >
                 <span class="text-5xl">
                   <i class="fa-brands fa-react"></i>
@@ -347,10 +438,10 @@
             <!-- technologies  -->
             <div
               id="content-length"
-              class="grid grid-cols-2 grid-rows-2 gap-3 bg-white rounded-2xl p-3"
+              class="grid grid-cols-2 grid-rows-2 gap-3 bg-white dark:bg-gray-800 rounded-2xl p-3"
             >
               <div
-                class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:-translate-y-2 ease-in-out duration-300 hover:bg-gray-300 hover:bg-linear-to-r from-red-500 via-orange-500 to-blue-500 bg-clip-text hover:text-transparent row-start-2 row-end-3 col-start-2"
+                class="flex flex-col items-center gap-1 p-2 border dark:text-white dark:border-gray-600 border-gray-200 rounded-md cursor-pointer hover:-translate-y-2 ease-in-out duration-300 hover:bg-gray-300 hover:bg-linear-to-r from-red-500 via-orange-500 to-blue-500 bg-clip-text hover:text-transparent row-start-2 row-end-3 col-start-2"
               >
                 <span class="text-5xl">
                   <i class="fa-brands fa-html5"></i>
@@ -358,7 +449,7 @@
                 <h2>HTML</h2>
               </div>
               <div
-                class="flex flex-col items-center gap-1 p-2 border border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent hover:-translate-y-2 ease-in-out duration-300 row-start-1 row-end-2"
+                class="flex flex-col items-center gap-1 p-2 border dark:text-white dark:border-gray-600 border-gray-200 rounded-md cursor-pointer hover:bg-gray-300 hover:bg-linear-to-r from-blue-500 via-purple-500 to-blue-500 bg-clip-text hover:text-transparent hover:-translate-y-2 ease-in-out duration-300 row-start-1 row-end-2"
               >
                 <span class="text-5xl">
                   <i class="fa-brands fa-css3-alt"></i>
@@ -386,7 +477,7 @@
           >
             <!-- porject -->
             <div
-              class="project-card bg-white p-3 rounded-2xl cursor-pointer justify-center lg:flex lg:gap-5 lg:col-span-3"
+              class="project-card bg-white dark:bg-gray-800 p-3 rounded-2xl cursor-pointer justify-center lg:flex lg:gap-5 lg:col-span-3"
             >
               <!-- img-project  -->
               <img
@@ -404,7 +495,9 @@
                     <h3>Instagram</h3>
                   </div>
                   <!-- body-card -->
-                  <div class="text-justify bg-gray-100 rounded-md p-2">
+                  <div
+                    class="text-justify bg-gray-100 dark:bg-gray-700 dark:text-white rounded-md p-2"
+                  >
                     <ul>
                       <li>
                         Replica of the famous social network
@@ -429,12 +522,12 @@
                   <!-- insignia -->
                   <div class="flex gap-2 items-center justify-end flex-wrap">
                     <div
-                      class="border border-pink-300 bg-pink-100 rounded-md p-2"
+                      class="border border-pink-300 dark:border-pink-300 bg-pink-100 dark:bg-pink-700 dark:text-white rounded-md p-2"
                     >
                       SASS
                     </div>
                     <div
-                      class="border border-orange-300 bg-orange-100 rounded-md p-2"
+                      class="border border-orange-300 dark:border-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-white rounded-md p-2"
                     >
                       HTML
                     </div>
@@ -466,13 +559,13 @@
               </div>
             </div>
             <div
-              class="project-card bg-white p-3 rounded-2xl gap-7 cursor-pointer lg:col-span-2 lg:row-span-2 lg:row-start-2 lg:flex lg:flex-col lg:gap-5"
+              class="project-card bg-white dark:bg-gray-800 p-3 rounded-2xl gap-7 cursor-pointer lg:col-span-2 lg:row-span-2 lg:row-start-2 lg:flex lg:flex-col lg:gap-5"
             >
               <!-- img-card -->
               <img
                 src="https://lh3.googleusercontent.com/3zkP2SYe7yYoKKe47bsNe44yTgb4Ukh__rBbwXwgkjNRe4PykGG409ozBxzxkrubV7zHKjfxq6y9ShogWtMBMPyB3jiNps91LoNH8A=s500"
                 alt="Project 1"
-                class="project-image w-full h-70 object-contain rounded-md lg:w-full hover:scale-102 ease-in-out duration-300"
+                class="project-image w-full object-contain rounded-md lg:w-full hover:scale-102 ease-in-out duration-300"
               />
               <!-- wrapper -->
               <div class="project-details flex flex-col justify-between">
@@ -484,7 +577,9 @@
                     <h3>Youtube Clone</h3>
                   </div>
                   <!-- body-card -->
-                  <div class="text-justify bg-gray-100 rounded-md p-2">
+                  <div
+                    class="text-justify bg-gray-100 dark:bg-gray-700 dark:text-white rounded-md p-2"
+                  >
                     <ul>
                       <li>
                         YouTube clone made in only
@@ -504,12 +599,12 @@
                   <!-- insignia -->
                   <div class="flex gap-1 items-center justify-end flex-wrap">
                     <div
-                      class="border border-blue-300 bg-blue-100 rounded-md p-2"
+                      class="border border-blue-700 dark:border-blue-300 bg-blue-100 dark:bg-blue-500 dark:text-white rounded-md p-2"
                     >
                       CSS
                     </div>
                     <div
-                      class="border border-orange-300 bg-orange-100 rounded-md p-2"
+                      class="border border-orange-300 dark:border-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-white rounded-md p-2"
                     >
                       HTML
                     </div>
@@ -541,7 +636,7 @@
               </div>
             </div>
             <div
-              class="project-card bg-white p-3 h-full rounded-2xl cursor-pointer lg:row-span-2 lg:row-start-2 lg:flex lg:flex-col lg:gap-7"
+              class="project-card bg-white dark:bg-gray-800 p-3 h-full rounded-2xl cursor-pointer lg:row-span-2 lg:row-start-2 lg:flex lg:flex-col lg:gap-7"
             >
               <!-- img-card -->
               <img
@@ -559,7 +654,9 @@
                     <h3>This space can be for you!</h3>
                   </div>
                   <!-- body-card -->
-                  <div class="text-justify bg-gray-100 rounded-md p-2">
+                  <div
+                    class="text-justify bg-gray-100 dark:bg-gray-700 dark:text-white rounded-md p-2"
+                  >
                     <ul>
                       <li>
                         Your project, company, or dream can become a reality and
@@ -580,17 +677,17 @@
                   <!-- insignia -->
                   <div class="flex gap-1 items-center justify-end flex-wrap">
                     <div
-                      class="border border-blue-300 bg-blue-100 rounded-md p-2"
+                      class="border border-blue-300 dark:border-blue-500 bg-blue-100 dark:bg-blue-500 dark:text-white rounded-md p-2"
                     >
                       TailwindCSS
                     </div>
                     <div
-                      class="border border-orange-300 bg-orange-100 rounded-md p-2"
+                      class="border border-orange-300 dark:border-orange-500 bg-orange-100 dark:bg-orange-700 dark:text-white rounded-md p-2"
                     >
                       HTML
                     </div>
                     <div
-                      class="border border-yellow-300 bg-yellow-100 rounded-md p-2"
+                      class="border border-yellow-300 dark:border-yellow-500 bg-yellow-100 dark:bg-yellow-500 dark:text-white rounded-md p-2"
                     >
                       Javascript
                     </div>
@@ -637,9 +734,14 @@
             id="content-contact"
             class="flex flex-col gap-3 md:ml-10 md:mr-10"
           >
-            <p>You can contact me through:</p>
+            <p class="text-white dark:text-white">
+              You can contact me through:
+            </p>
 
-            <div id="Contact-whatsapp" class="bg-white p-3 rounded-2xl">
+            <div
+              id="Contact-whatsapp"
+              class="bg-white dark:bg-gray-800 dark:text-white p-3 rounded-2xl"
+            >
               <div class="font-bold flex gap-2 items-center" data-aos="zoom-in">
                 <div>
                   <span class="text-2xl text-green-500">
@@ -657,7 +759,10 @@
               </div>
             </div>
 
-            <div id="Contact-instagram" class="bg-white p-3 rounded-2xl">
+            <div
+              id="Contact-instagram"
+              class="bg-white dark:bg-gray-800 dark:text-white p-3 rounded-2xl"
+            >
               <div
                 class="font-bold flex justify-end gap-2 items-center"
                 data-aos="fade-right"
@@ -679,7 +784,10 @@
               </div>
             </div>
 
-            <div id="Contact-emil" class="bg-white p-3 rounded-2xl">
+            <div
+              id="Contact-emil"
+              class="bg-white dark:bg-gray-800 dark:text-white p-3 rounded-2xl"
+            >
               <div class="font-bold flex gap-2 items-center" data-aos="zoom-in">
                 <div>
                   <span class="text-2xl text-red-500">
@@ -701,7 +809,9 @@
         </section>
       </main>
       <!-- footer -->
-      <footer class="bg-white p-3 ml-2 mr-2 rounded-2xl">
+      <footer
+        class="bg-white dark:bg-gray-900 dark:text-white p-3 ml-2 mr-2 rounded-2xl"
+      >
         <div class="flex flex-col gap-5 lg:flex-row lg:justify-around">
           <!-- about -->
           <div>
@@ -712,14 +822,16 @@
                 >development Web</span
               >
             </h2>
-            <p class="text-gray-500">
+            <p class="text-gray-500 dark:text-gray-200">
               Design is more than just colors; it's an experience.
             </p>
           </div>
           <!-- link -->
           <div>
             <h2 class="font-bold">Link</h2>
-            <ul class="text-gray-600 flex gap-3 justify-around lg:flex-col">
+            <ul
+              class="text-gray-600 dark:text-gray-300 flex gap-3 justify-around lg:flex-col"
+            >
               <a href="https://www.instagram.com/bafaf03/" target="_blank">
                 <li
                   class="hover:bg-linear-to-r from-pink-500 via-purple-500 to-orange-500 bg-clip-text hover:text-transparent flex gap-2 flex-col items-center lg:flex-row"
@@ -760,7 +872,7 @@
         </div>
         <!-- Copyright -->
         <div
-          class="flex flex-wrap justify-center gap-2 text-gray-600 font-bold bg-gray-300 rounded-md p-2 mt-2"
+          class="flex flex-wrap justify-center gap-2 text-gray-600 dark:text-gray-400 font-bold bg-gray-300 dark:bg-gray-600 rounded-md p-2 mt-2"
         >
           <p>Copyright &copy; 2025 Bryant Facenda.</p>
           <p>All rights reserved</p>
@@ -774,5 +886,7 @@
     <script>
       AOS.init();
     </script>
+    <!-- dark mode -->
+    <script src="js/mode-dark.js"></script>
   </body>
 </html>
