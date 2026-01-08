@@ -1,2 +1,117 @@
 @import "tailwindcss";
-@custom-variant dark (&:where(.dark, .dark *));
+
+.gallery {
+  display: grid;
+  grid-template-areas:
+    "box1"
+    "box2"
+    "box3"
+    "box4"
+    "box5";
+  grid-template-columns: 1fr;
+  grid-auto-rows: 25rem;
+  padding: 0 2%;
+  gap: 1rem;
+}
+
+.box-1 {
+  grid-area: box1;
+}
+
+.box-2 {
+  grid-area: box2;
+}
+
+.box-3 {
+  grid-area: box3;
+}
+
+.box-4 {
+  grid-area: box4;
+}
+
+.box-5 {
+  grid-area: box5;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.5rem;
+}
+
+.gallery-item:hover .box-info {
+  opacity: 1;
+  transform: translateY(0); /* Sube a su posición original */
+  pointer-events: auto;
+}
+
+.gallery-item:hover .img-gallery {
+  transform: scale(1.05);
+}
+
+.img-gallery {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+}
+
+.box-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.685); /* Fondo semitransparente ejemplo */
+  color: white;
+  padding: 1rem;
+  opacity: 0;
+  transform: translateY(20px); /* Empieza un poco más abajo */
+  transition: all 0.4s ease-in-out;
+  pointer-events: none; /* Evita que interfiera con el mouse si está oculto */
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .gallery {
+    grid-template-areas:
+      "box1 box1 box2"
+      "box1 box1 box3"
+      "box4 box5 box5";
+
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 30rem; /* Reducimos un poco la altura */
+    padding: 0 4%; /* Menos margen lateral */
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .gallery {
+    display: grid;
+    grid-template-areas:
+      "box1 box1 box2 box3"
+      "box1 box1 box4 box5";
+
+    grid-template-columns: repeat(4, 2fr);
+    grid-auto-rows: 30rem;
+    gap: 1rem;
+    padding: 0 3%;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .gallery {
+    grid-template-areas:
+      "box1 box1 box2 box3"
+      "box1 box1 box4 box5";
+
+    grid-template-columns: repeat(4, 2fr);
+    grid-auto-rows: 30rem;
+    gap: 1rem;
+    padding: 0 3%;
+  }
+}
