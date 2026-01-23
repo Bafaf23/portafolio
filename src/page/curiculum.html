@@ -4,19 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="../css/style.css" />
-    <!-- tailwindCSS -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <!-- daisyUI -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
-    />
     <!-- fontawesonme -->
     <script
       src="https://kit.fontawesome.com/a74559d35e.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="stylesheet" href="../../dist/css/output.css">
     <link
       rel="icon"
       href="https://opem.b-cdn.net/wp-content/uploads/2016/02/graduate23-150x150.png"
@@ -25,11 +18,15 @@
   </head>
   <body class="bg-gray-100 p-2">
     <div class="wapper md:ml-10 md:mr-10 lg:ml-20 lg:mr-20">
-      <header
-        class="flex flex-col gap-5 bg-white rounded-md p-3 border border-gray-200"
-      >
+      <header>
+        <button id="btnBack" type="button" class="flex items-center gap-1 p-2 cursor-pointer w-fit hover:opacity-80 transition-opacity">
+          <i class="fa-solid fa-angle-left text-cyan-500"></i>
+          <span class="dark:text-white">Volver</span>
+        </button>
+        
+      <!-- cabezera de la hoja -->
+      <div  class="flex flex-col gap-5 bg-white rounded-md p-3 border border-gray-200">
         <h1 class="text-center text-4xl font-bold">Bryant Facenda</h1>
-
         <ul
           class="flex flex-wrap justify-around gap-2 bg-gray-100 rounded-2xl p-2"
         >
@@ -105,6 +102,7 @@
             Ver hoja de CV
           </button>
         </a>
+      </div>
       </header>
       <main>
         <!-- educacion -->
@@ -226,7 +224,7 @@
         </section>
       </main>
       <footer
-        class="bg-gradient-to-l from-orange-400 via-pink-400 to-purple-400 mt-2 rounded-md flex items-center flex-col gap-2 p-3"
+        class="bg-linear-to-l from-orange-400 via-pink-400 to-purple-400 mt-2 rounded-md flex items-center flex-col gap-2 p-3"
       >
         <p class="text-white text-lg font-bold text-center">
           Desarrollado por
@@ -237,5 +235,7 @@
         </p>
       </footer>
     </div>
+
+    <script src="../../js/direciones.js"></script>
   </body>
 </html>
