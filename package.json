@@ -1,0 +1,29 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "Portfolio created with HTML and tailwindCSS and deployed on a GitHub page to showcase my work as a web developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bafaf23/portafolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bafaf23/portafolio/issues"
+  },
+  "homepage": "https://github.com/Bafaf23/portafolio#readme",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^6.0.2",
+    "prettier": "^3.8.1",
+    "prettier-plugin-tailwindcss": "^0.7.2"
+  }
+}
