@@ -31,7 +31,7 @@ export function Hero() {
       <div class="relative">
         <div class="w-full aspect-square bg-orange-600 rounded-3xl rotate-3 absolute inset-0 opacity-10"></div>
         <div class="w-full aspect-square bg-white border border-slate-200 rounded-3xl shadow-2xl relative flex items-center justify-center overflow-hidden">
-          <img src="./src/asset/img/Foto-primary.jpg" class="w-full h-full object-cover"/>
+          <img src="./src/asset/img/Foto-primary1.jpg" class="w-full h-full object-cover"/>
         </div>
       </div>
     </div>
